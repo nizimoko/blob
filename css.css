@@ -1,5 +1,64 @@
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: cursive;
+}
+body {
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.circle {
+  width: 20rem;
+  height: 20rem;
+  background-color: bisque;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 0 50px rgb(131, 131, 131);
+  position: relative; /* 1 */
+}
+
+.circle::after {
+  position: absolute; /* 2 */
+  width: 50%; /* 3 */
+  height: 100%; /* 4 */
+  background: linear-gradient(to right, bisque, rgb(141, 141, 255)); /* 5 */
+  content: ""; /* 6 */
+  bottom: 0;
+  right: 0;
+  /* z-index: -1; */
+}
+nav {
+  background-color: #218;
+  padding: 1rem;
+  min-height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.item {
+  font-size: 2rem;
+}
+header {
+  min-height: 5vh;
+  font-size: 2rem;
+  background-color: aqua;
+}
+
+header nav {
+  padding: 1% 2%;
+  max-width: 65rem;
+  margin: auto;
+}
+
+main {
+  padding: 2%;
+  max-width: 65rem;
+  margin: auto;
 }
